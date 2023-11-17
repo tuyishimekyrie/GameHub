@@ -2,10 +2,12 @@ import GameGrid from "./GameGrid";
 import Header from "./Header";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
+import { Genre } from "../hooks/useGenres";
 
 const Layout = () => {
   const [change, setChange] = useState(true);
-
+    const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+console.log(selectedGenre)
   return (
     <div
       className={`p-2 h-full ${
@@ -15,10 +17,13 @@ const Layout = () => {
       <Header onClick={() => setChange(!change)} change={change} />
       <div className="grid grid-cols-5 mt-2 ml-2">
         <div className="hidden sm:flex sm:col-span-1">
-          <Sidebar />
+          <Sidebar
+            // selectedGenre={(genre) => setSelectedGenre(genre)}
+            setSelectedGenre={setSelectedGenre}
+          />
         </div>
         <div className="col-span-5 sm:col-span-4 ">
-          <GameGrid />
+          <GameGrid selectedGenre={selectedGenre}/>
         </div>
       </div>
     </div>

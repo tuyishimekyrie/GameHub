@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import useData from "./useData";
+import { Genre } from "./useGenres";
 interface platIcon {
   id: number;
   name: string;
@@ -29,13 +30,15 @@ export interface Game {
 //   results: Game[];
 // }
 
-function useGames() {
-  return  useData<Game>('/games');
+function useGames(selectedGenre: Genre | null) {
+  return useData<Game>("/games", { params: { genres: selectedGenre?.id } }, [
+    selectedGenre?.id,
+  ]);
   // const [error, setError] = useState("");
   // const [isLoading, setLoading] = useState(false);
   // useEffect(() => {
   //   const controller = new AbortController();
-  //   setLoading(true);
+  //   setLoading(true);F
   //   apiClient
   //     .get<FetchGamesResponse>("/games")
   //     .then((res) => {
