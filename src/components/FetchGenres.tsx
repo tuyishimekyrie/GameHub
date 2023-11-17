@@ -1,11 +1,11 @@
 import useGenres from "../hooks/useGenres";
 
 const FetchGenres = () => {
-  const { genres, error } = useGenres();
+  const { data, error } = useGenres();
   return (
     <div>
       {error && <p className="text-2xl text-red-500">{error}</p>}
-      {genres.map((genre) => (
+      {data.map((genre) => (
         <div
           key={genre.id}
           className="flex justify-items-center items-center gap-2 hover:bg-slate-600 hover:rounded-md hover:text-sky-500 hover:cursor-pointer"
@@ -25,3 +25,5 @@ const FetchGenres = () => {
 };
 
 export default FetchGenres;
+
+
