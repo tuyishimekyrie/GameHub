@@ -11,18 +11,18 @@ interface platIcon {
 }
 export interface Platform {
   platform: platIcon;
-  id: number,
-  name: string,
-  image_background: string,
-  description: string,
-  image: string,
+  id: number;
+  name: string;
+  image_background: string;
+  description: string;
+  image: string;
 }
 export interface Game {
   id: number;
   name: string;
   background_image: string;
-  metacritic:number
-  platforms: [platform: Platform] ,
+  metacritic: number;
+  platforms: [platform: Platform];
   // parent_platforms?: {platform: Platform}[];
 }
 
@@ -34,7 +34,7 @@ interface FetchGamesResponse {
 function useGames() {
   const [games, setGames] = useState<Game[]>([]);
   const [error, setError] = useState("");
-  const [isLoading,setLoading] =useState(false);
+  const [isLoading, setLoading] = useState(false);
   useEffect(() => {
     const controller = new AbortController();
     setLoading(true);
@@ -51,7 +51,7 @@ function useGames() {
       });
     return () => controller.abort();
   }, []);
-  return { games, error ,isLoading};
+  return { games, error, isLoading };
 }
 
 export default useGames;

@@ -6,7 +6,7 @@ const GameGrid = () => {
   const { games, error, isLoading } = useGames();
   const skeletons = [1, 2, 3, 4, 5, 6];
   return (
-    <div className="">
+    <div className="bg-slate-900 text-slate-100">
       {error && <p className="text-red-500 font-bold">{error}</p>}
       <div className="grid grid-cols-1 sm:grid sm:grid-cols-2 md:grid md:grid-cols-3 lg:grid lg:grid-cols-4 gap-4">
         {games.map((game) => (
