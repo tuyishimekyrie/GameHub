@@ -3,6 +3,7 @@ import Header from "./Header";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 import { Genre } from "../hooks/useGenres";
+import PlatformSelector from "./PlatformSelector";
 
 const Layout = () => {
   const [change, setChange] = useState(true);
@@ -16,13 +17,14 @@ console.log(selectedGenre)
     >
       <Header onClick={() => setChange(!change)} change={change} />
       <div className="grid grid-cols-5 mt-2 ml-2">
-        <div className="hidden sm:flex sm:col-span-1">
+        <div className="hidden sm:flex sm:col-span-1 my-5">
           <Sidebar
             // selectedGenre={(genre) => setSelectedGenre(genre)}
             setSelectedGenre={setSelectedGenre}
           />
         </div>
-        <div className="col-span-5 sm:col-span-4 ">
+        <div className="col-span-5 sm:col-span-4 my-6">
+          <PlatformSelector/>
           <GameGrid selectedGenre={selectedGenre}/>
         </div>
       </div>
