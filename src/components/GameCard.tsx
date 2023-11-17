@@ -19,7 +19,7 @@ const GameCard = ({ game }: Props) => {
         <p className="2xl py-2">{game.name}</p>
         <div className="flex flex-wrap   gap-2">
           {game.platforms.map((p) => (
-            <p className="text-slate-400 font-semibold" key={p.id}>
+            <p className="text-slate-400 font-semibold" key={p.platform.id}>
               {p.platform.name}
             </p>
           ))}
