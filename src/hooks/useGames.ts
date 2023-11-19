@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import useData from "./useData";
 import { Genre } from "./useGenres";
+import { Platform } from "./usePlatforms";
 interface platIcon {
   id: number;
   name: string;
@@ -8,7 +9,7 @@ interface platIcon {
   description: string;
   image: string;
 }
-export interface Platform {
+export interface Platforms {
   platform: platIcon;
   id: number;
   name: string;
@@ -21,7 +22,7 @@ export interface Game {
   name: string;
   background_image: string;
   metacritic: number;
-  platforms: [platform: Platform];
+  platforms: [platform: Platforms];
   // parent_platforms?: {platform: Platform}[];
 }
 
@@ -30,10 +31,15 @@ export interface Game {
 //   results: Game[];
 // }
 
-function useGames(selectedGenre: Genre | null) {
-  return useData<Game>("/games", { params: { genres: selectedGenre?.id } }, [
-    selectedGenre?.id,
-  ]);
+function useGames(
+  selectedGenre: Genre | null,
+  selectedPlatform: Platform | null
+) {
+  return useData<Game>(
+    "/games",
+    { params: { genres: selectedGenre?.id, platforms: selectedPlatform?.id } },
+    [selectedGenre?.id,selectedPlatform?.id]
+  );
   // const [error, setError] = useState("");
   // const [isLoading, setLoading] = useState(false);
   // useEffect(() => {

@@ -1,13 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import GameGrid from "./GameGrid";
 import Header from "./Header";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 import { Genre } from "../hooks/useGenres";
 import PlatformSelector from "./PlatformSelector";
+import { Platform } from "../hooks/usePlatforms";
+
 
 const Layout = () => {
   const [change, setChange] = useState(true);
-    const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+  const [selectedPlatform,setSelectedPlatform] = useState<Platform | null>(null);
 console.log(selectedGenre)
   return (
     <div
@@ -24,8 +28,13 @@ console.log(selectedGenre)
           />
         </div>
         <div className="col-span-5 sm:col-span-4 my-6">
-          <PlatformSelector/>
-          <GameGrid selectedGenre={selectedGenre}/>
+          <PlatformSelector
+            onSelectPlatform={(platform) => setSelectedPlatform(platform)}
+          />
+          <GameGrid
+            selectedGenre={selectedGenre}
+            selectedPlatform={selectedPlatform}
+          />
         </div>
       </div>
     </div>
