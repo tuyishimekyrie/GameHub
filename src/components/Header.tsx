@@ -12,7 +12,7 @@ const Header = ({ onClick, change }: Props) => {
         <img src={logo} alt="logo" />
       </div>
       <div
-        className={`flex items-center px-2 rounded-full gap-2 focus:outline-sky-400 ${
+        className={`flex items-center p-2 rounded-full gap-2 focus:outline-sky-400 ${
           change ? "bg-slate-800" : "bg-slate-400"
         } col-span-5`}
       >
