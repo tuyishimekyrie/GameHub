@@ -29,8 +29,8 @@ const Header = ({ onClick, change }: Props) => {
       </div>
       <div className="flex items-center gap-2 col-span-2 justify-end">
         <div
-          className={`rounded-full w-10 h-4 ${
-            change ? "bg-slate-600" : "bg-slate-700 before:bg-sky-400"
+          className={`rounded-full w-10 h-4 transition-all duration-100 cursor-pointer  ${
+            change ? "bg-slate-600 " : "bg-slate-700 before:bg-sky-400"
           }  before:absolute before:w-4 before:h-4 before:bg-green-500 before:rounded-full before:py-2 ${
             change ? "before:ml-6" : "before:p-0"
           } `}
