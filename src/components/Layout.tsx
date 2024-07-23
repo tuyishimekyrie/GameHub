@@ -15,7 +15,7 @@ const Layout = () => {
 console.log(selectedGenre)
   return (
     <div
-      className={`p-2 h-full ${
+      className={`p-2 h-screen ${
         change ? "bg-slate-900 text-slate-100" : "bg-slate-200 text-slate-950"
       } `}
     >
