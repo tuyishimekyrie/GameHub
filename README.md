@@ -1,6 +1,10 @@
 # React + TypeScript + Vite
 
-![React Logo](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg) ![TypeScript Logo](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg) ![Vite Logo](https://vitejs.dev/logo.svg)
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Logo" width="50" height="50" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript Logo" width="50" height="50" />
+  <img src="https://vitejs.dev/logo.svg" alt="Vite Logo" width="50" height="50" />
+</div>
 
 This project template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
